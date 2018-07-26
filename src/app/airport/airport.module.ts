@@ -8,6 +8,7 @@ import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, Mat
 import { MainComponent } from './main/main.component';
 import { AirplaneComponent } from './airplane/airplane.component';
 import { AirplanetypeComponent } from './airplanetype/airplanetype.component';
+import { CrewComponent } from './crew/crew.component';
 
 @NgModule({
   imports: [
@@ -23,6 +24,6 @@ import { AirplanetypeComponent } from './airplanetype/airplanetype.component';
     MatCardModule,
     MatMenuModule
   ],
-  declarations: [NavbarComponent, MainComponent, AirplaneComponent, AirplanetypeComponent]
+  declarations: [NavbarComponent, MainComponent, AirplaneComponent, AirplanetypeComponent, CrewComponent]
 })
 export class AirportModule { }
