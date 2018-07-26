@@ -11,6 +11,7 @@ import { AirplanetypeComponent } from './airplanetype/airplanetype.component';
 import { CrewComponent } from './crew/crew.component';
 import { DepartureComponent } from './departure/departure.component';
 import { FlightComponent } from './flight/flight.component';
+import { PilotComponent } from './pilot/pilot.component';
 
 @NgModule({
   imports: [
@@ -26,6 +27,6 @@ import { FlightComponent } from './flight/flight.component';
     MatCardModule,
     MatMenuModule
   ],
-  declarations: [NavbarComponent, MainComponent, AirplaneComponent, AirplanetypeComponent, CrewComponent, DepartureComponent, FlightComponent]
+  declarations: [NavbarComponent, MainComponent, AirplaneComponent, AirplanetypeComponent, CrewComponent, DepartureComponent, FlightComponent, PilotComponent]
 })
 export class AirportModule { }
