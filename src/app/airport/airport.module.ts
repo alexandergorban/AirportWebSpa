@@ -4,7 +4,8 @@ import { CommonModule } from '@angular/common';
 import { AirportRoutingModule } from './airport-routing.module';
 import { NavbarComponent } from './navbar/navbar.component';
 import { LayoutModule } from '@angular/cdk/layout';
-import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule } from '@angular/material';
+import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule, MatGridListModule, MatCardModule, MatMenuModule } from '@angular/material';
+import { MainComponent } from './main/main.component';
 
 @NgModule({
   imports: [
@@ -15,8 +16,11 @@ import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, Mat
     MatButtonModule,
     MatSidenavModule,
     MatIconModule,
-    MatListModule
+    MatListModule,
+    MatGridListModule,
+    MatCardModule,
+    MatMenuModule
   ],
-  declarations: [NavbarComponent]
+  declarations: [NavbarComponent, MainComponent]
 })
 export class AirportModule { }
