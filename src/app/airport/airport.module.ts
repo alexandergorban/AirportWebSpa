@@ -14,6 +14,14 @@ import { FlightComponent } from './flight/flight.component';
 import { PilotComponent } from './pilot/pilot.component';
 import { StewardessComponent } from './stewardess/stewardess.component';
 import { TicketComponent } from './ticket/ticket.component';
+import { TicketDetailsComponent } from './ticket/ticket-details/ticket-details.component';
+import { StewardessDetailsComponent } from './stewardess/stewardess-details/stewardess-details.component';
+import { PilotDetailsComponent } from './pilot/pilot-details/pilot-details.component';
+import { FlightDetailsComponent } from './flight/flight-details/flight-details.component';
+import { DepartureDetailsComponent } from './departure/departure-details/departure-details.component';
+import { CrewDetailsComponent } from './crew/crew-details/crew-details.component';
+import { AirplanetypeDetailsComponent } from './airplanetype/airplanetype-details/airplanetype-details.component';
+import { AirplaneDetailsComponent } from './airplane/airplane-details/airplane-details.component';
 
 @NgModule({
   imports: [
@@ -29,6 +37,6 @@ import { TicketComponent } from './ticket/ticket.component';
     MatCardModule,
     MatMenuModule
   ],
-  declarations: [NavbarComponent, MainComponent, AirplaneComponent, AirplanetypeComponent, CrewComponent, DepartureComponent, FlightComponent, PilotComponent, StewardessComponent, TicketComponent]
+  declarations: [NavbarComponent, MainComponent, AirplaneComponent, AirplanetypeComponent, CrewComponent, DepartureComponent, FlightComponent, PilotComponent, StewardessComponent, TicketComponent, TicketDetailsComponent, StewardessDetailsComponent, PilotDetailsComponent, FlightDetailsComponent, DepartureDetailsComponent, CrewDetailsComponent, AirplanetypeDetailsComponent, AirplaneDetailsComponent]
 })
 export class AirportModule { }
