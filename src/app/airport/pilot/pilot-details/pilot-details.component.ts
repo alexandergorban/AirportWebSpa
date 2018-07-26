@@ -3,7 +3,7 @@ import { map } from 'rxjs/operators';
 import { Breakpoints, BreakpointObserver } from '@angular/cdk/layout';
 
 @Component({
-  selector: 'app-airport/pilot/pilot-details',
+  selector: 'pilot-details',
   templateUrl: './pilot-details.component.html',
   styleUrls: ['./pilot-details.component.css'],
 })
