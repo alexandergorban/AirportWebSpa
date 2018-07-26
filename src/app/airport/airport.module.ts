@@ -4,7 +4,9 @@ import { CommonModule } from '@angular/common';
 import { AirportRoutingModule } from './airport-routing.module';
 import { NavbarComponent } from './navbar/navbar.component';
 import { LayoutModule } from '@angular/cdk/layout';
-import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule, MatGridListModule, MatCardModule, MatMenuModule } from '@angular/material';
+import { MatToolbarModule, MatButtonModule, MatSidenavModule,
+  MatIconModule, MatListModule, MatGridListModule,
+  MatCardModule, MatMenuModule } from '@angular/material';
 import { MainComponent } from './main/main.component';
 import { AirplaneComponent } from './airplane/airplane.component';
 import { AirplanetypeComponent } from './airplanetype/airplanetype.component';
@@ -37,6 +39,25 @@ import { AirplaneDetailsComponent } from './airplane/airplane-details/airplane-d
     MatCardModule,
     MatMenuModule
   ],
-  declarations: [NavbarComponent, MainComponent, AirplaneComponent, AirplanetypeComponent, CrewComponent, DepartureComponent, FlightComponent, PilotComponent, StewardessComponent, TicketComponent, TicketDetailsComponent, StewardessDetailsComponent, PilotDetailsComponent, FlightDetailsComponent, DepartureDetailsComponent, CrewDetailsComponent, AirplanetypeDetailsComponent, AirplaneDetailsComponent]
+  declarations: [
+    NavbarComponent,
+    MainComponent,
+    AirplaneComponent,
+    AirplanetypeComponent,
+    CrewComponent,
+    DepartureComponent,
+    FlightComponent,
+    PilotComponent,
+    StewardessComponent,
+    TicketComponent,
+    TicketDetailsComponent,
+    StewardessDetailsComponent,
+    PilotDetailsComponent,
+    FlightDetailsComponent,
+    DepartureDetailsComponent,
+    CrewDetailsComponent,
+    AirplanetypeDetailsComponent,
+    AirplaneDetailsComponent
+  ]
 })
 export class AirportModule { }
