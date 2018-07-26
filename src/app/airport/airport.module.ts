@@ -6,6 +6,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule, MatGridListModule, MatCardModule, MatMenuModule } from '@angular/material';
 import { MainComponent } from './main/main.component';
+import { AirplaneComponent } from './airplane/airplane.component';
 
 @NgModule({
   imports: [
@@ -21,6 +22,6 @@ import { MainComponent } from './main/main.component';
     MatCardModule,
     MatMenuModule
   ],
-  declarations: [NavbarComponent, MainComponent]
+  declarations: [NavbarComponent, MainComponent, AirplaneComponent]
 })
 export class AirportModule { }
