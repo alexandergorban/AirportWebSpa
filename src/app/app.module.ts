@@ -9,6 +9,7 @@ import { MatToolbarModule, MatButtonModule, MatSidenavModule,
   MatCardModule, MatMenuModule } from '@angular/material';
 import { AirportModule } from './airport/airport.module';
 import { NavbarComponent } from './airport/navbar/navbar.component';
+import {ServicesModule} from './shared/services/services.module';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { NavbarComponent } from './airport/navbar/navbar.component';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    ServicesModule,
     AirportModule
   ],
   providers: [],
