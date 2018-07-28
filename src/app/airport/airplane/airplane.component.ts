@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { map } from 'rxjs/operators';
 import { Breakpoints, BreakpointObserver } from '@angular/cdk/layout';
+import {AirplaneService} from '../../shared/services/airplane.service';
 
 @Component({
   selector: 'airplane',
@@ -29,5 +30,5 @@ export class AirplaneComponent {
     })
   );
 
-  constructor(private breakpointObserver: BreakpointObserver) {}
+  constructor(private breakpointObserver: BreakpointObserver, private airplaneService: AirplaneService) {}
 }
