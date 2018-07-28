@@ -31,9 +31,15 @@ export class ResourceService<T extends Resource> {
       .pipe(map((data: any) => this.serializer.fromJson(data) as T));
   }
 
-  list(queryOptions: QueryOptions): Observable<T[]> {
+  listQuery(queryOptions: QueryOptions): Observable<T[]> {
     return this.httpClient
       .get(`${this.url}/${this.endpoint}?${queryOptions.toQueryString()}`)
+      .pipe(map((data: any) => this.convertData(data.items)));
+  }
+
+  list(): Observable<T[]> {
+    return this.httpClient
+      .get(`${this.url}/${this.endpoint}`)
       .pipe(map((data: any) => this.convertData(data.items)));
   }
 
