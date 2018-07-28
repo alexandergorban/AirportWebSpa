@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {AirplaneType} from '../models/airplanetype';
 import {Observable} from 'rxjs';
