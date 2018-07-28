@@ -5,5 +5,5 @@ import {Stewardess} from './stewardess';
 
 export class Crew extends Resource {
   pilot: Pilot;
-  stewardesses: List<Stewardess>;
+  stewardesses: Stewardess[];
 }
