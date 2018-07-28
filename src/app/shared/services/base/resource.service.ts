@@ -2,8 +2,9 @@ import {Resource} from '../../models/resource';
 import {HttpClient} from '@angular/common/http';
 import {Serializer} from '../../interfaces/serializer';
 import {Observable} from 'rxjs';
-import {map} from "rxjs/operators";
 import {QueryOptions} from './query-options';
+import {map} from 'rxjs/operators';
+
 
 export class ResourceService<T extends Resource> {
   constructor(
@@ -34,13 +35,13 @@ export class ResourceService<T extends Resource> {
   listQuery(queryOptions: QueryOptions): Observable<T[]> {
     return this.httpClient
       .get(`${this.url}/${this.endpoint}?${queryOptions.toQueryString()}`)
-      .pipe(map((data: any) => this.convertData(data.items)));
+      .pipe(map((data: any) => this.convertData(data)));
   }
 
   list(): Observable<T[]> {
     return this.httpClient
       .get(`${this.url}/${this.endpoint}`)
-      .pipe(map((data: any) => this.convertData(data.items)));
+      .pipe(map((data: any) => this.convertData(data)));
   }
 
   delete(id: number) {
