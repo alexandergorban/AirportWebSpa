@@ -8,10 +8,12 @@ import {FlightService} from './flight.service';
 import {PilotService} from './pilot.service';
 import {StewardessService} from './stewardess.service';
 import {TicketService} from './ticket.service';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
+    HttpClientModule
   ],
   providers: [
     AirplaneService,
