@@ -9,5 +9,5 @@ export class Flight extends Resource {
   departureTime: Date;
   destinationPoing: AirportLocation;
   arrivalTime: Date;
-  tickets: List<Ticket>
+  tickets: Ticket[]
 }

@@ -1,13 +1,14 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import { map } from 'rxjs/operators';
 import { Breakpoints, BreakpointObserver } from '@angular/cdk/layout';
+import {FlightService} from '../../shared/services/flight.service';
 
 @Component({
   selector: 'flight',
   templateUrl: './flight.component.html',
   styleUrls: ['./flight.component.css'],
 })
-export class FlightComponent {
+export class FlightComponent implements OnInit {
   /** Based on the screen size, switch from standard to one column per row */
   cards = this.breakpointObserver.observe(Breakpoints.Handset).pipe(
     map(({ matches }) => {
@@ -29,5 +30,13 @@ export class FlightComponent {
     })
   );
 
-  constructor(private breakpointObserver: BreakpointObserver) {}
+  constructor(private breakpointObserver: BreakpointObserver, private flightService: FlightService) {
+
+  }
+
+  ngOnInit(): void {
+    this.flightService.list().subscribe(data => {
+      debugger;
+    });
+  }
 }
