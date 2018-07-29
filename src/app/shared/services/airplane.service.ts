@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {ResourceService} from './base/resource.service';
-import {AirplaneSerializer} from '../models/serializer/airplane-serializer';
+import {AirplaneSerializer} from './serializer/airplane-serializer';
 import {Airplane} from '../models/airplane';
 
 @Injectable()

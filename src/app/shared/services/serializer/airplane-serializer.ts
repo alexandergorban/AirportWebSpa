@@ -1,4 +1,4 @@
-import {Airplane} from '../airplane';
+import {Airplane} from '../../models/airplane';
 
 export class AirplaneSerializer {
   fromJson(json: any): Airplane {

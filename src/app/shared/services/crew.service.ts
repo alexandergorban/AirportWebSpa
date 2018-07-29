@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {ResourceService} from './base/resource.service';
-import {CrewSerializer} from '../models/serializer/crew-serializer';
+import {CrewSerializer} from './serializer/crew-serializer';
 import {Crew} from '../models/crew';
 
 @Injectable()

@@ -1,4 +1,4 @@
-import {Crew} from '../crew';
+import {Crew} from '../../models/crew';
 
 export class CrewSerializer {
   fromJson(json: any): Crew {

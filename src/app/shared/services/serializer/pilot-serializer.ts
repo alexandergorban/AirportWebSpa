@@ -1,4 +1,4 @@
-import {Pilot} from '../pilot';
+import {Pilot} from '../../models/pilot';
 
 export class PilotSerializer {
   fromJson(json: any): Pilot {

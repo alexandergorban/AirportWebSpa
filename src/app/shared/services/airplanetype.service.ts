@@ -2,7 +2,7 @@ import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {AirplaneType} from '../models/airplanetype';
 import {ResourceService} from './base/resource.service';
-import {AirplaneTypeSerializer} from '../models/serializer/airplanetype-serializer';
+import {AirplaneTypeSerializer} from './serializer/airplanetype-serializer';
 
 @Injectable()
 export class AirplanetypeService extends ResourceService<AirplaneType>{

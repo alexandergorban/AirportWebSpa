@@ -1,4 +1,4 @@
-import {Stewardess} from '../stewardess';
+import {Stewardess} from '../../models/stewardess';
 
 export class StewardessSerializer {
   fromJson(json: any): Stewardess {
