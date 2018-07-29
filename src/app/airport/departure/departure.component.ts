@@ -20,4 +20,10 @@ export class DepartureComponent implements OnInit {
       this.departures = data;
     });
   }
+
+  deleteDeparture(id: string) {
+    this.departureService.delete(id).subscribe(() => {
+      this.departures = this.departures.filter(departure => departure.id !== id);
+    })
+  }
 }

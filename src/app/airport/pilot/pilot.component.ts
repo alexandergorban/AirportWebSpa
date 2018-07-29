@@ -20,4 +20,10 @@ export class PilotComponent implements OnInit {
       this.pilots = data;
     });
   }
+
+  deletePilot(id: string) {
+    this.pilotService.delete(id).subscribe(() => {
+      this.pilots = this.pilots.filter(pilot => pilot.id !== id);
+    })
+  }
 }

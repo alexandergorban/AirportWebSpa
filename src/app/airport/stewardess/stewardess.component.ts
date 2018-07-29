@@ -1,6 +1,4 @@
 import {Component, OnInit} from '@angular/core';
-import { map } from 'rxjs/operators';
-import { Breakpoints, BreakpointObserver } from '@angular/cdk/layout';
 import {Stewardess} from '../../shared/models/stewardess';
 import {StewardessService} from '../../shared/services/stewardess.service';
 
@@ -12,7 +10,7 @@ import {StewardessService} from '../../shared/services/stewardess.service';
 export class StewardessComponent implements OnInit {
   stewardesses: Stewardess[];
 
-  constructor(private breakpointObserver: BreakpointObserver, private stewardessService: StewardessService) {
+  constructor(private stewardessService: StewardessService) {
 
   }
 
@@ -20,5 +18,11 @@ export class StewardessComponent implements OnInit {
     this.stewardessService.list().subscribe(data => {
       this.stewardesses = data;
     });
+  }
+
+  deleteStewardess(id: string) {
+    this.stewardessService.delete(id).subscribe(() => {
+      this.stewardesses = this.stewardesses.filter(stewardess => stewardess.id !== id);
+    })
   }
 }

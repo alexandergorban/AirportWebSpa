@@ -11,7 +11,7 @@
             </button>
             <mat-menu #menu="matMenu" xPosition="before">
               <button mat-menu-item [routerLink]="['/departures', departure.id]">Details</button>
-              <button mat-menu-item>Remove</button>
+              <button mat-menu-item (click)="deleteDeparture(departure.id)">Delete</button>
             </mat-menu>
           </mat-card-title>
         </mat-card-header>
