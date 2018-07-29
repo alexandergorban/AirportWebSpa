@@ -1,33 +1,24 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import { map } from 'rxjs/operators';
 import { Breakpoints, BreakpointObserver } from '@angular/cdk/layout';
+import {Stewardess} from '../../shared/models/stewardess';
+import {StewardessService} from '../../shared/services/stewardess.service';
 
 @Component({
   selector: 'stewardess',
   templateUrl: './stewardess.component.html',
-  styleUrls: ['./stewardess.component.css'],
+  styleUrls: ['./stewardess.component.less'],
 })
-export class StewardessComponent {
-  /** Based on the screen size, switch from standard to one column per row */
-  cards = this.breakpointObserver.observe(Breakpoints.Handset).pipe(
-    map(({ matches }) => {
-      if (matches) {
-        return [
-          { title: 'Card 1', cols: 1, rows: 1 },
-          { title: 'Card 2', cols: 1, rows: 1 },
-          { title: 'Card 3', cols: 1, rows: 1 },
-          { title: 'Card 4', cols: 1, rows: 1 }
-        ];
-      }
+export class StewardessComponent implements OnInit {
+  stewardesses: Stewardess[];
 
-      return [
-        { title: 'Card 1', cols: 2, rows: 1 },
-        { title: 'Card 2', cols: 1, rows: 1 },
-        { title: 'Card 3', cols: 1, rows: 2 },
-        { title: 'Card 4', cols: 1, rows: 1 }
-      ];
-    })
-  );
+  constructor(private breakpointObserver: BreakpointObserver, private stewardessService: StewardessService) {
 
-  constructor(private breakpointObserver: BreakpointObserver) {}
+  }
+
+  ngOnInit(): void {
+    this.stewardessService.list().subscribe(data => {
+      this.stewardesses = data;
+    });
+  }
 }

@@ -9,7 +9,7 @@ export class StewardessService extends ResourceService<Stewardess>{
   constructor(httpClient: HttpClient) {
     super(httpClient,
       'http://localhost:32157/api/v1',
-      'stewardesses',
+      'crews/stewardesses',
       new StewardessSerializer())
   }
 }
