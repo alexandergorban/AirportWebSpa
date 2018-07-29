@@ -10,6 +10,7 @@ import { MatToolbarModule, MatButtonModule, MatSidenavModule,
 import { AirportModule } from './airport/airport.module';
 import { NavbarComponent } from './airport/navbar/navbar.component';
 import {ServicesModule} from './shared/services/services.module';
+import {MomentModule} from 'ngx-moment';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import {ServicesModule} from './shared/services/services.module';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    MomentModule,
     ServicesModule,
     AirportModule
   ],
