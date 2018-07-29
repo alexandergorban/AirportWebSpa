@@ -9,7 +9,7 @@ export class PilotService extends ResourceService<Pilot>{
   constructor(httpClient: HttpClient) {
     super(httpClient,
       'http://localhost:32157/api/v1',
-      'pilots',
+      'crews/pilots',
       new PilotSerializer())
   }
 }
