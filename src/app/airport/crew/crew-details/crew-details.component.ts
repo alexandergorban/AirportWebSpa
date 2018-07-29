@@ -1,33 +1,23 @@
-import { Component } from '@angular/core';
-import { map } from 'rxjs/operators';
-import { Breakpoints, BreakpointObserver } from '@angular/cdk/layout';
+import {Component, OnInit} from '@angular/core';
+import {ActivatedRoute} from '@angular/router';
+import {Crew} from '../../../shared/models/crew';
+import {CrewService} from '../../../shared/services/crew.service';
 
 @Component({
   selector: 'crew-details',
   templateUrl: './crew-details.component.html',
   styleUrls: ['./crew-details.component.css'],
 })
-export class CrewDetailsComponent {
-  /** Based on the screen size, switch from standard to one column per row */
-  cards = this.breakpointObserver.observe(Breakpoints.Handset).pipe(
-    map(({ matches }) => {
-      if (matches) {
-        return [
-          { title: 'Card 1', cols: 1, rows: 1 },
-          { title: 'Card 2', cols: 1, rows: 1 },
-          { title: 'Card 3', cols: 1, rows: 1 },
-          { title: 'Card 4', cols: 1, rows: 1 }
-        ];
-      }
+export class CrewDetailsComponent implements OnInit {
+  crew: Crew;
 
-      return [
-        { title: 'Card 1', cols: 2, rows: 1 },
-        { title: 'Card 2', cols: 1, rows: 1 },
-        { title: 'Card 3', cols: 1, rows: 2 },
-        { title: 'Card 4', cols: 1, rows: 1 }
-      ];
-    })
-  );
+  constructor(private route:ActivatedRoute, private crewService: CrewService) {
 
-  constructor(private breakpointObserver: BreakpointObserver) {}
+  }
+
+  ngOnInit() {
+    this.crewService.read(this.route.snapshot.params['id']).subscribe(data => {
+      this.crew = data;
+    });
+  }
 }

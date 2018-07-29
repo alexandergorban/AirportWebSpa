@@ -8,7 +8,7 @@ import {AirplanetypeService} from '../../../shared/services/airplanetype.service
   templateUrl: './airplanetype-details.component.html',
   styleUrls: ['./airplanetype-details.component.less'],
 })
-export class AirplanetypeDetailsComponent implements OnInit  {
+export class AirplanetypeDetailsComponent implements OnInit {
   airplaneType: AirplaneType;
 
   constructor(private route:ActivatedRoute, private airplanetypeService: AirplanetypeService) {
