@@ -1,5 +1,8 @@
 <div class="grid-container">
   <h1 class="mat-h1">Airplane Type Details</h1>
+  <div class="button-row">
+    <button mat-raised-button color="primary" [routerLink]="['/airplanetypes']">< Back</button>
+  </div>
   <mat-grid-list cols="2" rowHeight="150px">
     <mat-grid-tile *ngIf="airplaneType" [colspan]="2">
       <mat-card class="dashboard-card">
