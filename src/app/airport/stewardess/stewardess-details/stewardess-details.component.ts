@@ -1,33 +1,23 @@
-import { Component } from '@angular/core';
-import { map } from 'rxjs/operators';
-import { Breakpoints, BreakpointObserver } from '@angular/cdk/layout';
+import {Component, OnInit} from '@angular/core';
+import {ActivatedRoute} from '@angular/router';
+import {StewardessService} from '../../../shared/services/stewardess.service';
+import {Stewardess} from '../../../shared/models/stewardess';
 
 @Component({
   selector: 'stewardess-details',
   templateUrl: './stewardess-details.component.html',
   styleUrls: ['./stewardess-details.component.css'],
 })
-export class StewardessDetailsComponent {
-  /** Based on the screen size, switch from standard to one column per row */
-  cards = this.breakpointObserver.observe(Breakpoints.Handset).pipe(
-    map(({ matches }) => {
-      if (matches) {
-        return [
-          { title: 'Card 1', cols: 1, rows: 1 },
-          { title: 'Card 2', cols: 1, rows: 1 },
-          { title: 'Card 3', cols: 1, rows: 1 },
-          { title: 'Card 4', cols: 1, rows: 1 }
-        ];
-      }
+export class StewardessDetailsComponent implements OnInit {
+  stewardess: Stewardess;
 
-      return [
-        { title: 'Card 1', cols: 2, rows: 1 },
-        { title: 'Card 2', cols: 1, rows: 1 },
-        { title: 'Card 3', cols: 1, rows: 2 },
-        { title: 'Card 4', cols: 1, rows: 1 }
-      ];
-    })
-  );
+  constructor(private route:ActivatedRoute, private stewardessService: StewardessService) {
 
-  constructor(private breakpointObserver: BreakpointObserver) {}
+  }
+
+  ngOnInit() {
+    this.stewardessService.read(this.route.snapshot.params['id']).subscribe(data => {
+      this.stewardess = data;
+    });
+  }
 }
