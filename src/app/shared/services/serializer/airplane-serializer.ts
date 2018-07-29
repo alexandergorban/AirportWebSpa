@@ -4,6 +4,7 @@ export class AirplaneSerializer {
   fromJson(json: any): Airplane {
     const airplane = new Airplane();
     airplane.id = json.id;
+    airplane.name = json.name;
     airplane.airplaneType = json.airplaneType;
     airplane.dateOfIssue = json.dateOfIssue;
     airplane.lifeTime = json.lifeTime;
@@ -15,6 +16,7 @@ export class AirplaneSerializer {
   toJson(airplane: Airplane): any {
     return {
       id: airplane.id,
+      name: airplane.name,
       airplaneType: airplane.airplaneType,
       dateOfIssue: airplane.dateOfIssue,
       lifeTime: airplane.lifeTime,
