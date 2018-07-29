@@ -29,67 +29,67 @@ const routes: Routes = [
     component: MainComponent
   },
   {
-    path: 'airplane',
+    path: 'airplanes',
     component: AirplaneComponent
   },
   {
-    path: 'airplane/:id',
+    path: 'airplanes/:id',
     component: AirplaneDetailsComponent
   },
   {
-    path: 'airplanetype',
+    path: 'airplanetypes',
     component: AirplanetypeComponent
   },
   {
-    path: 'airplanetype/:id',
+    path: 'airplanetypes/:id',
     component: AirplanetypeDetailsComponent
   },
   {
-    path: 'crew',
+    path: 'crews',
     component: CrewComponent
   },
   {
-    path: 'crew/:id',
+    path: 'crews/:id',
     component: CrewDetailsComponent
   },
   {
-    path: 'departure',
+    path: 'departures',
     component: DepartureComponent
   },
   {
-    path: 'departure/:id',
+    path: 'departures/:id',
     component: DepartureDetailsComponent
   },
   {
-    path: 'flight',
+    path: 'flights',
     component: FlightComponent
   },
   {
-    path: 'flight/:id',
+    path: 'flights/:id',
     component: FlightDetailsComponent
   },
   {
-    path: 'pilot',
+    path: 'pilots',
     component: PilotComponent
   },
   {
-    path: 'pilot/:id',
+    path: 'pilots/:id',
     component: PilotDetailsComponent
   },
   {
-    path: 'stewardess',
+    path: 'stewardesses',
     component: StewardessComponent
   },
   {
-    path: 'stewardess/:id',
+    path: 'stewardesses/:id',
     component: StewardessDetailsComponent
   },
   {
-    path: 'ticket',
+    path: 'tickets',
     component: TicketComponent
   },
   {
-    path: 'ticket/:id',
+    path: 'tickets/:id',
     component: TicketDetailsComponent
   }
 ];

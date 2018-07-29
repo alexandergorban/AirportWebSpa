@@ -1,33 +1,23 @@
-import { Component } from '@angular/core';
-import { map } from 'rxjs/operators';
-import { Breakpoints, BreakpointObserver } from '@angular/cdk/layout';
+import {Component, OnInit} from '@angular/core';
+import {ActivatedRoute} from '@angular/router';
+import {DepartureService} from '../../../shared/services/departure.service';
+import {Departure} from '../../../shared/models/departure';
 
 @Component({
   selector: 'departure-details',
   templateUrl: './departure-details.component.html',
   styleUrls: ['./departure-details.component.css'],
 })
-export class DepartureDetailsComponent {
-  /** Based on the screen size, switch from standard to one column per row */
-  cards = this.breakpointObserver.observe(Breakpoints.Handset).pipe(
-    map(({ matches }) => {
-      if (matches) {
-        return [
-          { title: 'Card 1', cols: 1, rows: 1 },
-          { title: 'Card 2', cols: 1, rows: 1 },
-          { title: 'Card 3', cols: 1, rows: 1 },
-          { title: 'Card 4', cols: 1, rows: 1 }
-        ];
-      }
+export class DepartureDetailsComponent implements OnInit {
+  departure: Departure;
 
-      return [
-        { title: 'Card 1', cols: 2, rows: 1 },
-        { title: 'Card 2', cols: 1, rows: 1 },
-        { title: 'Card 3', cols: 1, rows: 2 },
-        { title: 'Card 4', cols: 1, rows: 1 }
-      ];
-    })
-  );
+  constructor(private route:ActivatedRoute, private departureService: DepartureService) {
 
-  constructor(private breakpointObserver: BreakpointObserver) {}
+  }
+
+  ngOnInit() {
+    this.departureService.read(this.route.snapshot.params['id']).subscribe(data => {
+      this.departure = data;
+    });
+  }
 }
