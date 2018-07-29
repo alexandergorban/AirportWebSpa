@@ -20,4 +20,10 @@ export class AirplaneComponent implements OnInit {
       this.airplanes = data;
     });
   }
+
+  deleteAirplane(id: string) {
+    this.airplaneService.delete(id).subscribe(() => {
+      this.airplanes = this.airplanes.filter(airplane => airplane.id !== id);
+    })
+  }
 }

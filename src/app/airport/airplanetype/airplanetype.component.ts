@@ -1,6 +1,4 @@
 import {Component, OnInit} from '@angular/core';
-import { map } from 'rxjs/operators';
-import { Breakpoints, BreakpointObserver } from '@angular/cdk/layout';
 import {AirplanetypeService} from '../../shared/services/airplanetype.service';
 import {AirplaneType} from '../../shared/models/airplanetype';
 
@@ -12,14 +10,19 @@ import {AirplaneType} from '../../shared/models/airplanetype';
 export class AirplanetypeComponent implements OnInit {
   airplaneTypes: AirplaneType[];
 
-  constructor(private breakpointObserver: BreakpointObserver, private airplanetypeService: AirplanetypeService) {
+  constructor(private airplanetypeService: AirplanetypeService) {
 
   }
 
   ngOnInit(): void {
     this.airplanetypeService.list().subscribe(data => {
       this.airplaneTypes = data;
-      // debugger;
     });
+  }
+
+  deleteAirplaneType(id: string) {
+    this.airplanetypeService.delete(id).subscribe(() => {
+      this.airplaneTypes = this.airplaneTypes.filter(airplaneType => airplaneType.id !== id);
+    })
   }
 }

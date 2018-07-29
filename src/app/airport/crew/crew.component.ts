@@ -20,4 +20,10 @@ export class CrewComponent implements OnInit {
       this.crews = data;
     });
   }
+
+  deleteCrew(id: string) {
+    this.crewService.delete(id).subscribe(() => {
+      this.crews = this.crews.filter(crew => crew.id !== id);
+    })
+  }
 }
