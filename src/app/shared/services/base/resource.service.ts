@@ -44,7 +44,7 @@ export class ResourceService<T extends Resource> {
       .pipe(map((data: any) => this.convertData(data)));
   }
 
-  delete(id: number) {
+  delete(id: string) {
     return this.httpClient
       .delete(`${this.url}/${this.endpoint}/${id}`);
   }
