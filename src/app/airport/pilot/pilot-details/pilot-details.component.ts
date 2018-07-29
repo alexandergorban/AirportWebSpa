@@ -1,33 +1,23 @@
-import { Component } from '@angular/core';
-import { map } from 'rxjs/operators';
-import { Breakpoints, BreakpointObserver } from '@angular/cdk/layout';
+import {Component, OnInit} from '@angular/core';
+import {PilotService} from '../../../shared/services/pilot.service';
+import {ActivatedRoute} from '@angular/router';
+import {Pilot} from '../../../shared/models/pilot';
 
 @Component({
   selector: 'pilot-details',
   templateUrl: './pilot-details.component.html',
   styleUrls: ['./pilot-details.component.css'],
 })
-export class PilotDetailsComponent {
-  /** Based on the screen size, switch from standard to one column per row */
-  cards = this.breakpointObserver.observe(Breakpoints.Handset).pipe(
-    map(({ matches }) => {
-      if (matches) {
-        return [
-          { title: 'Card 1', cols: 1, rows: 1 },
-          { title: 'Card 2', cols: 1, rows: 1 },
-          { title: 'Card 3', cols: 1, rows: 1 },
-          { title: 'Card 4', cols: 1, rows: 1 }
-        ];
-      }
+export class PilotDetailsComponent implements OnInit {
+  pilot: Pilot;
 
-      return [
-        { title: 'Card 1', cols: 2, rows: 1 },
-        { title: 'Card 2', cols: 1, rows: 1 },
-        { title: 'Card 3', cols: 1, rows: 2 },
-        { title: 'Card 4', cols: 1, rows: 1 }
-      ];
-    })
-  );
+  constructor(private route:ActivatedRoute, private pilotService: PilotService) {
 
-  constructor(private breakpointObserver: BreakpointObserver) {}
+  }
+
+  ngOnInit() {
+    this.pilotService.read(this.route.snapshot.params['id']).subscribe(data => {
+      this.pilot = data;
+    });
+  }
 }
